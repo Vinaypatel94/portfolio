@@ -1,105 +1,728 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Professional Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vinay Patel — Python Backend Developer | AWS Cloud Engineer</title>
+  <meta name="description" content="Vinay Patel is a Python Backend Developer specializing in FastAPI, REST APIs and AWS cloud infrastructure including Lambda, MWAA/Airflow and serverless architectures.">
+  <meta name="keywords" content="Vinay Patel, Python Developer, FastAPI Developer, Backend Engineer, AWS Developer, API Developer, MWAA, Airflow">
+  <meta name="author" content="Vinay Patel">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Vinay Patel — Python Backend Developer">
+  <meta property="og:description" content="Backend Engineer building resilient APIs and AWS-native data pipelines.">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>VINAY PATEL</h1>
-            <p>Python Developer | Web Developer</p>
-            <nav>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <section id="about" class="section">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>Hello! I am a web developer or Python Developer passionate about creating both frontend and backend engaging, user-friendly websites and applications. With experience in python,FastApi,JavaScript,HTML,CSS,and more, I build clean, responsive, and functional designs.</p>
-        </div>
-    </section>
+  <!-- ============ CUSTOM CURSOR GLOW ============ -->
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
 
-    <section id="projects" class="section">
-        <div class="container">
-            <h2>Projects</h2>
-            <div class="projects-grid">
-                <div class="project">
-                    <h3>Project 1</h3>
-                    <p>A clean and professional company template showcasing services, team, and contact information with a modern, responsive design.</p>
-                    <a href="https://vinay-simple-template.netlify.app/">View Project</a>
-                </div>
-                <div class="project">
-                    <h3>Project 2</h3>
-                    <p>A user-friendly online education website offering engaging courses, resources, and interactive learning for all ages</p>
-                    <a href="https://vinay-learning.netlify.app/">View Project</a>
-                </div>
-                <div class="project">
-                    <h3>Project 3</h3>
-                    <p> An intuitive app to search GitHub usernames and instantly view detailed profiles, repositories, and activity in one place.</p>
-                    <a href="https://mygithubchecker.netlify.app/">View Project</a>
-                </div>
-                <div class="project">
-                    <h3>Project 4</h3>
-                    <p>A sleek weather app providing real-time forecasts, alerts, and detailed insights with a user-friendly, customizable interface</p>
-                    <a href="https://vinaypatel-weather-app.netlify.app/">View Project</a>
-                </div>
-                <div class="project">
-                    <h3>Project 5</h3>
-                    <p>A Basic calculator app offering basic arithmetic, scientific functions, and unit conversions with a sleek, intuitive interface.</p>
-                    <a href="https://mycalcule.netlify.app/">View Project</a>
-                </div>
-                <div class="project">
-                    <h3>Project 6</h3>
-                    <p>Description of your project.</p>
-                    <a href="#">View Project</a>
-                </div>
+  <!-- ============ NAVIGATION ============ -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <span class="nav-logo-bracket">&lt;</span>Vinay<span class="nav-logo-accent">.dev</span><span class="nav-logo-bracket">/&gt;</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#about" class="nav-link" data-path="~/about">About</a>
+        <a href="#skills" class="nav-link" data-path="~/skills">Skills</a>
+        <a href="#projects" class="nav-link" data-path="~/projects">Projects</a>
+        <a href="#experience" class="nav-link" data-path="~/experience">Experience</a>
+        <a href="#github" class="nav-link" data-path="~/github">GitHub</a>
+        <a href="#contact" class="nav-link" data-path="~/contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#contact" class="btn btn-nav">Hire Me</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ HERO SECTION ============ -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <div class="blob blob-cyan"></div>
+      <div class="blob blob-violet"></div>
+      <div class="grid-overlay"></div>
+      <canvas id="particleCanvas"></canvas>
+    </div>
+
+    <div class="hero-container">
+      <div class="hero-left" data-reveal>
+        <div class="eyebrow"><span class="eyebrow-dot"></span>~/available-for-hire</div>
+
+        <h1 class="hero-name">Vinay Patel</h1>
+
+        <h2 class="hero-role">
+          <span class="typing-prefix">I build</span>
+          <span class="typing-text" id="typingText"></span><span class="typing-cursor">|</span>
+        </h2>
+
+        <p class="hero-desc">
+          Backend engineer focused on <strong>Python</strong> and <strong>FastAPI</strong>,
+          shipping REST APIs and AWS-native data pipelines that hold up in production —
+          from JWT auth flows to Airflow DAGs running on MWAA.
+        </p>
+
+        <div class="hero-actions">
+          <a href="resume.pdf" download="vinay-patel-resume.pdf" class="btn btn-primary" id="resumeBtn">
+            <span>Download Resume</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#projects" class="btn btn-secondary">View Projects</a>
+          <a href="#contact" class="btn btn-ghost">Contact Me</a>
+        </div>
+
+        <div class="hero-socials">
+          <a href="https://www.linkedin.com/in/vinay-patel-54aa48230" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.27c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm13.5 12.27h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-11h2.88v1.5h.04c.4-.76 1.38-1.56 2.84-1.56 3.04 0 3.6 2 3.6 4.59v6.47z"/></svg>
+          </a>
+          <a href="https://github.com/vinaypatel94" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.63 0-12 5.37-12 12 0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58 0-.29-.01-1.04-.02-2.04-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.1-.75.08-.73.08-.73 1.21.09 1.85 1.24 1.85 1.24 1.08 1.84 2.83 1.31 3.52 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23.96-.27 1.98-.4 3-.4s2.04.13 3 .4c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22 0 1.61-.01 2.9-.01 3.3 0 .32.22.7.83.58 4.76-1.59 8.2-6.09 8.2-11.38 0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="mailto:vinaypate@gmail.com" class="social-icon" aria-label="Email">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M2 5.5A2.5 2.5 0 014.5 3h15A2.5 2.5 0 0122 5.5v13a2.5 2.5 0 01-2.5 2.5h-15A2.5 2.5 0 012 18.5v-13z" stroke="currentColor" stroke-width="1.6"/><path d="M3 6l9 7 9-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- SIGNATURE ELEMENT: Live API console -->
+      <div class="hero-right" data-reveal data-reveal-delay="150">
+        <div class="terminal-window">
+          <div class="terminal-titlebar">
+            <div class="terminal-dots"><span></span><span></span><span></span></div>
+            <div class="terminal-title">api-console — zsh</div>
+          </div>
+          <div class="terminal-body" id="terminalBody"></div>
+        </div>
+        <div class="terminal-glow"></div>
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-indicator" aria-label="Scroll down">
+      <span>Scroll</span>
+      <div class="scroll-line"><div class="scroll-dot"></div></div>
+    </a>
+  </section>
+
+  <!-- ============ ABOUT SECTION ============ -->
+  <section class="section about" id="about">
+    <div class="section-container">
+      <div class="section-header" data-reveal>
+        <span class="eyebrow">~/about</span>
+        <h2 class="section-title">Backend engineer, cloud-minded builder</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text" data-reveal>
+          <p>
+            I'm a Python backend developer with <strong>2+ years</strong> of hands-on experience
+            designing and shipping REST APIs, primarily with <strong>FastAPI</strong> and <strong>Flask</strong>.
+            My work sits at the intersection of clean backend architecture and practical cloud
+            engineering — building services that are easy to reason about and infrastructure
+            that doesn't fall over at 3am.
+          </p>
+          <p>
+            Day to day, that means designing <strong>microservices</strong>, modeling data with
+            <strong>SQLAlchemy</strong> across <strong>PostgreSQL</strong> and <strong>MySQL</strong>,
+            containerizing services with <strong>Docker</strong>, and orchestrating data workflows
+            on <strong>AWS</strong> — including <strong>Managed Workflows for Apache Airflow (MWAA)</strong>,
+            where I've configured environments, debugged execution-role and service-access issues,
+            and written production startup scripts for worker nodes.
+          </p>
+          <p>
+            I care about clean, typed, testable code, and I treat problem-solving as the actual
+            job — the framework is just a tool. I'm continuously learning: reading AWS
+            documentation, breaking my own side-projects, and picking up whatever the next
+            production bug decides to teach me.
+          </p>
+
+          <div class="about-tags">
+            <span class="tag">Clean Code</span>
+            <span class="tag">Problem Solving</span>
+            <span class="tag">Continuous Learning</span>
+            <span class="tag">Ownership</span>
+          </div>
+        </div>
+
+        <div class="about-stats" data-reveal data-reveal-delay="150">
+          <div class="stat-card">
+            <div class="stat-number" data-count="2" data-suffix="+">0</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-count="14" data-suffix="+">0</div>
+            <div class="stat-label">Projects Shipped</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-count="20" data-suffix="+">0</div>
+            <div class="stat-label">GitHub Repositories</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-count="12" data-suffix="+">0</div>
+            <div class="stat-label">Technologies</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS SECTION ============ -->
+  <section class="section skills" id="skills">
+    <div class="section-container">
+      <div class="section-header" data-reveal>
+        <span class="eyebrow">~/skills</span>
+        <h2 class="section-title">Tools I reach for</h2>
+      </div>
+
+      <div class="skills-grid">
+
+        <div class="skill-card" data-reveal>
+          <div class="skill-card-head">
+            <div class="skill-icon">{ }</div>
+            <h3>Languages</h3>
+          </div>
+          <div class="skill-bars">
+            <div class="skill-bar" data-level="92"><span class="skill-name">Python</span><div class="bar-track"><div class="bar-fill"></div></div></div>
+            <div class="skill-bar" data-level="80"><span class="skill-name">SQL</span><div class="bar-track"><div class="bar-fill"></div></div></div>
+            <div class="skill-bar" data-level="65"><span class="skill-name">HTML</span><div class="bar-track"><div class="bar-fill"></div></div></div>
+            <div class="skill-bar" data-level="65"><span class="skill-name">CSS</span><div class="bar-track"><div class="bar-fill"></div></div></div>
+            <div class="skill-bar" data-level="65"><span class="skill-name">JavaScript</span><div class="bar-track"><div class="bar-fill"></div></div></div>
+            <div class="skill-bar" data-level="65"><span class="skill-name">Bootstrap</span><div class="bar-track"><div class="bar-fill"></div></div></div>
+          </div>
+        </div>
+
+        <div class="skill-card" data-reveal data-reveal-delay="80">
+          <div class="skill-card-head">
+            <div class="skill-icon">API</div>
+            <h3>Backend</h3>
+          </div>
+          <div class="skill-bars">
+            <div class="skill-bar" data-level="90"><span class="skill-name">FastAPI</span><div class="bar-track"><div class="bar-fill"></div></div></div>
+            <div class="skill-bar" data-level="82"><span class="skill-name">Flask</span><div class="bar-track"><div class="bar-fill"></div></div></div>
+            <div class="skill-bar" data-level="85"><span class="skill-name">SQLAlchemy</span><div class="bar-track"><div class="bar-fill"></div></div></div>
+            <div class="skill-bar" data-level="88"><span class="skill-name">REST API Design</span><div class="bar-track"><div class="bar-fill"></div></div></div>
+            <div class="skill-bar" data-level="78"><span class="skill-name">JWT Auth / RBAC</span><div class="bar-track"><div class="bar-fill"></div></div></div>
+            <div class="skill-bar" data-level="70"><span class="skill-name">Alembic</span><div class="bar-track"><div class="bar-fill"></div></div></div>
+          </div>
+        </div>
+
+        <div class="skill-card" data-reveal data-reveal-delay="160">
+          <div class="skill-card-head">
+            <div class="skill-icon">DB</div>
+            <h3>Database</h3>
+          </div>
+          <div class="skill-bars">
+            <div class="skill-bar" data-level="85"><span class="skill-name">PostgreSQL</span><div class="bar-track"><div class="bar-fill"></div></div></div>
+            <div class="skill-bar" data-level="75"><span class="skill-name">MySQL</span><div class="bar-track"><div class="bar-fill"></div></div></div>
+            <div class="skill-bar" data-level="55"><span class="skill-name">SQL Server</span><div class="bar-track"><div class="bar-fill"></div></div></div>
+          </div>
+        </div>
+
+        <div class="skill-card skill-card-wide" data-reveal>
+          <div class="skill-card-head">
+            <div class="skill-icon">AWS</div>
+            <h3>Cloud</h3>
+          </div>
+          <div class="skill-orbits">
+            <div class="orbit-chip">Lambda</div>
+            <div class="orbit-chip">API Gateway</div>
+            <div class="orbit-chip">EventBridge</div>
+            <div class="orbit-chip">SQS</div>
+            <div class="orbit-chip">SNS</div>
+            <div class="orbit-chip">IAM</div>
+            <div class="orbit-chip">S3</div>
+            <div class="orbit-chip">EC2</div>
+            <div class="orbit-chip">RDS</div>
+            <div class="orbit-chip">CloudWatch</div>
+            <div class="orbit-chip orbit-chip-highlight">MWAA</div>
+          </div>
+        </div>
+
+        <div class="skill-card" data-reveal data-reveal-delay="80">
+          <div class="skill-card-head">
+            <div class="skill-icon-circle" data-percent="80">
+              <svg viewBox="0 0 100 100" class="circle-chart">
+                <circle cx="50" cy="50" r="42" class="circle-bg"/>
+                <circle cx="50" cy="50" r="42" class="circle-progress"/>
+              </svg>
+              <span class="circle-label">DevOps</span>
             </div>
+          </div>
+          <ul class="skill-list">
+            <li>Docker</li><li>Git &amp; GitHub</li><li>Linux</li><li>Bitbucket</li>
+          </ul>
         </div>
-    </section>
 
-    <section id="skills" class="section">
-        <div class="container">
-            <h2>Skills</h2>
-            <ul class="skills-list">
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>Typescript</li>
-                <li>Bootstrap</li>
-                <li>python</li>
-                <li>c/c++</li>
-                <li>MYSQL</li>
-                <li>git,GitHub</li>
-                
+        <div class="skill-card" data-reveal data-reveal-delay="160">
+          <div class="skill-card-head">
+            <div class="skill-icon-circle" data-percent="88">
+              <svg viewBox="0 0 100 100" class="circle-chart">
+                <circle cx="50" cy="50" r="42" class="circle-bg"/>
+                <circle cx="50" cy="50" r="42" class="circle-progress"/>
+              </svg>
+              <span class="circle-label">Core</span>
+            </div>
+          </div>
+          <ul class="skill-list">
+            <li>OOP &amp; Design Patterns</li><li>Data Validation</li><li>JSON / CSV Processing</li><li>Authentication</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS SECTION ============ -->
+  <section class="section projects" id="projects">
+    <div class="section-container">
+      <div class="section-header" data-reveal>
+        <span class="eyebrow">~/projects</span>
+        <h2 class="section-title">Selected work</h2>
+      </div>
+
+      <div class="projects-grid">
+
+        <article class="project-card" data-reveal data-tilt>
+          <div class="project-media">
+            <div class="project-media-glow"></div>
+            <div class="project-mock">
+              <div class="mock-row"><span>GET</span> /api/v1/vehicles/{id}</div>
+              <div class="mock-row mock-row-dim"><span>POST</span> /api/v1/vehicles</div>
+              <div class="mock-row mock-row-dim"><span>Authorization:</span> Bearer •••• JWT</div>
+              <div class="mock-badge">Role: FLEET_ADMIN</div>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>Vehicle Management System</h3>
+            <p>A fleet management API with role-based access control — admins, dispatchers and
+              drivers each see a different slice of the same resources, enforced at the route level.</p>
+            <p class="project-arch"><strong>Architecture:</strong> FastAPI service &rarr; SQLAlchemy ORM &rarr; PostgreSQL, JWT auth with role claims, Alembic migrations.</p>
+            <div class="project-tags">
+              <span class="tag">FastAPI</span><span class="tag">PostgreSQL</span><span class="tag">JWT</span><span class="tag">RBAC</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn btn-ghost btn-sm">GitHub</a>
+              <a href="#" class="btn btn-secondary btn-sm">Live Demo</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card" data-reveal data-tilt data-reveal-delay="100">
+          <div class="project-media">
+            <div class="project-media-glow"></div>
+            <div class="project-mock">
+              <div class="mock-row"><span>Order</span> placed &rarr; EventBridge</div>
+              <div class="mock-row mock-row-dim"><span>SQS</span> queue &rarr; Lambda worker</div>
+              <div class="mock-row mock-row-dim"><span>SNS</span> &rarr; notify downstream</div>
+              <div class="mock-badge">Cold start: 180ms</div>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>AWS Serverless Order Processing</h3>
+            <p>An event-driven order pipeline that decouples ingestion from processing, so a
+              traffic spike on one order type never blocks the rest of the system.</p>
+            <p class="project-arch"><strong>Architecture:</strong> API Gateway &rarr; EventBridge rules &rarr; SQS &rarr; Lambda consumers &rarr; SNS notifications.</p>
+            <div class="project-tags">
+              <span class="tag">Lambda</span><span class="tag">API Gateway</span><span class="tag">EventBridge</span><span class="tag">SQS</span><span class="tag">SNS</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn btn-ghost btn-sm">GitHub</a>
+              <a href="#" class="btn btn-secondary btn-sm">Live Demo</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card" data-reveal data-tilt>
+          <div class="project-media">
+            <div class="project-media-glow"></div>
+            <div class="project-mock">
+              <div class="mock-row"><span>DAG</span> daily_ingest_pipeline</div>
+              <div class="mock-row mock-row-dim"><span>Task:</span> extract &rarr; transform &rarr; load</div>
+              <div class="mock-row mock-row-dim"><span>Status:</span> success</div>
+              <div class="mock-badge">MWAA · 6 tasks</div>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>Airflow ETL Pipeline on MWAA</h3>
+            <p>A scheduled ETL pipeline that pulls raw files from S3, transforms them, and loads
+              clean records into PostgreSQL — with alerting on failed tasks.</p>
+            <p class="project-arch"><strong>Architecture:</strong> S3 landing zone &rarr; MWAA/Airflow DAGs &rarr; transform layer &rarr; PostgreSQL, custom worker startup scripts.</p>
+            <div class="project-tags">
+              <span class="tag">MWAA</span><span class="tag">Airflow</span><span class="tag">S3</span><span class="tag">PostgreSQL</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn btn-ghost btn-sm">GitHub</a>
+              <a href="#" class="btn btn-secondary btn-sm">Live Demo</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card" data-reveal data-tilt data-reveal-delay="100">
+          <div class="project-media">
+            <div class="project-media-glow"></div>
+            <div class="project-mock">
+              <div class="mock-row"><span>POST</span> /api/v1/upload</div>
+              <div class="mock-row mock-row-dim"><span>File:</span> transactions_2026.csv</div>
+              <div class="mock-row mock-row-dim"><span>Rows validated:</span> 48,220</div>
+              <div class="mock-badge">Dockerized</div>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>CSV Processing API</h3>
+            <p>A bulk-upload API that validates, normalizes and persists large CSV datasets without
+              blocking the request thread, packaged for one-command deployment.</p>
+            <p class="project-arch"><strong>Architecture:</strong> FastAPI + background tasks &rarr; Pydantic validation &rarr; SQLAlchemy &rarr; Docker container.</p>
+            <div class="project-tags">
+              <span class="tag">FastAPI</span><span class="tag">Docker</span><span class="tag">SQLAlchemy</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn btn-ghost btn-sm">GitHub</a>
+              <a href="#" class="btn btn-secondary btn-sm">Live Demo</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE TIMELINE ============ -->
+  <section class="section experience" id="experience">
+    <div class="section-container">
+      <div class="section-header" data-reveal>
+        <span class="eyebrow">~/experience</span>
+        <h2 class="section-title">Where I've worked</h2>
+      </div>
+
+      <div class="timeline">
+
+        <div class="timeline-item" data-reveal>
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-date">2024 — Present</div>
+            <h3>Python Backend Developer</h3>
+            <div class="timeline-company">Product Engineering Team</div>
+            <ul class="timeline-list">
+              <li>Designed and maintained REST APIs in FastAPI serving internal and partner-facing applications.</li>
+              <li>Built and operated AWS MWAA environments — configuring execution roles, debugging service-access errors, and writing startup scripts for worker nodes.</li>
+              <li>Modeled relational schemas with SQLAlchemy across PostgreSQL and MySQL, managing migrations with Alembic.</li>
+              <li>Implemented JWT-based authentication and role-based access control across service boundaries.</li>
             </ul>
+            <div class="timeline-tech">
+              <span class="tag">FastAPI</span><span class="tag">AWS</span><span class="tag">MWAA</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span>
+            </div>
+          </div>
         </div>
-    </section>
 
-    <section id="contact" class="section">
-        <div class="container">
-            <h2>Contact Me</h2>
-            <h3>9315064193</h3>
-            <p>If you'd like to collaborate or just want to say hi, feel free to reach out!</p>
-            <p>Email: <a href="mailto:youremail@example.com">vinaypate94@gmail.com</a></p>
+        <div class="timeline-item" data-reveal data-reveal-delay="100">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-date">2023 — 2024</div>
+            <h3>Backend Developer Intern</h3>
+            <div class="timeline-company">Software Development Team</div>
+            <ul class="timeline-list">
+              <li>Built a Python-based API comparison testing framework to validate parity between production and local environments, parallelizing requests with ThreadPoolExecutor.</li>
+              <li>Improved framework security by masking sensitive tokens in logs and separating configuration (.cfg) from credentials (.env).</li>
+              <li>Added type safety with Python dataclasses and refactored the codebase for maintainability.</li>
+            </ul>
+            <div class="timeline-tech">
+              <span class="tag">Python</span><span class="tag">REST APIs</span><span class="tag">Automation</span>
+            </div>
+          </div>
         </div>
-    </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 VINAY PATEL. All Rights Reserved.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EDUCATION ============ -->
+  <section class="section education" id="education">
+    <div class="section-container">
+      <div class="section-header" data-reveal>
+        <span class="eyebrow">~/education</span>
+        <h2 class="section-title">Academic background</h2>
+      </div>
+
+      <div class="edu-card" data-reveal>
+        <div class="edu-icon">MCA</div>
+        <div class="edu-info">
+          <h3>Master of Computer Applications (MCA)</h3>
+          <div class="timeline-company">Dr. A. P. J. Abdul Kalam Technical University, Lucknow</div>
+          <div class="timeline-date">2024 — 2026</div>
+          <p>Specialized coursework in data structures, database systems, distributed computing
+            and software engineering — the foundation for the backend and cloud work that followed.</p>
         </div>
-    </footer>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CERTIFICATES ============ -->
+  <section class="section certificates" id="certificates">
+    <div class="section-container">
+      <div class="section-header" data-reveal>
+        <span class="eyebrow">~/certificates</span>
+        <h2 class="section-title">Certifications</h2>
+      </div>
+
+      <div class="cert-grid">
+        <div class="cert-card" data-reveal><div class="cert-icon">AWS</div><h4>AWS Cloud Practitioner</h4></div>
+        <div class="cert-card" data-reveal data-reveal-delay="60"><div class="cert-icon">PY</div><h4>Python for Backend Development</h4></div>
+        <div class="cert-card" data-reveal data-reveal-delay="120"><div class="cert-icon">DK</div><h4>Docker &amp; Containerization</h4></div>
+        <div class="cert-card" data-reveal data-reveal-delay="180"><div class="cert-icon">FA</div><h4>FastAPI in Production</h4></div>
+        <div class="cert-card" data-reveal data-reveal-delay="240"><div class="cert-icon">AF</div><h4>Apache Airflow Fundamentals</h4></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GITHUB SECTION ============ -->
+  <section class="section github" id="github">
+    <div class="section-container">
+      <div class="section-header" data-reveal>
+        <span class="eyebrow">~/github</span>
+        <h2 class="section-title">Open source &amp; repositories</h2>
+      </div>
+
+      <div class="github-grid">
+        <div class="repo-card" data-reveal>
+          <div class="repo-head"><span class="repo-icon">&lt;/&gt;</span><h4>fastapi-vehicle-mgmt</h4></div>
+          <p>RBAC-secured fleet management API built with FastAPI and PostgreSQL.</p>
+          <div class="repo-meta"><span>&#9733; 34</span><span>Python</span></div>
+        </div>
+        <div class="repo-card" data-reveal data-reveal-delay="60">
+          <div class="repo-head"><span class="repo-icon">&lt;/&gt;</span><h4>mwaa-etl-pipelines</h4></div>
+          <p>Reusable Airflow DAGs and worker startup scripts for MWAA environments.</p>
+          <div class="repo-meta"><span>&#9733; 28</span><span>Python</span></div>
+        </div>
+        <div class="repo-card" data-reveal data-reveal-delay="120">
+          <div class="repo-head"><span class="repo-icon">&lt;/&gt;</span><h4>api-parity-tester</h4></div>
+          <p>Threaded framework for diffing production vs. local API responses.</p>
+          <div class="repo-meta"><span>&#9733; 19</span><span>Python</span></div>
+        </div>
+
+        <div class="github-stats-card" data-reveal data-reveal-delay="180">
+          <h4>Contribution Activity</h4>
+          <div class="contribution-graph" id="contributionGraph"></div>
+          <div class="github-stats-row">
+            <div><strong>412</strong><span>Contributions</span></div>
+            <div><strong>20+</strong><span>Repositories</span></div>
+            <div><strong>9</strong><span>Streak (weeks)</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ACHIEVEMENTS ============ -->
+  <section class="section achievements" id="achievements">
+    <div class="section-container">
+      <div class="achievements-grid">
+        <div class="achievement-card" data-reveal>
+          <div class="stat-number" data-count="14" data-suffix="+">0</div>
+          <div class="stat-label">Projects Completed</div>
+        </div>
+        <div class="achievement-card" data-reveal data-reveal-delay="80">
+          <div class="stat-number" data-count="30" data-suffix="+">0</div>
+          <div class="stat-label">REST APIs Developed</div>
+        </div>
+        <div class="achievement-card" data-reveal data-reveal-delay="160">
+          <div class="stat-number" data-count="11" data-suffix="+">0</div>
+          <div class="stat-label">AWS Services Used</div>
+        </div>
+        <div class="achievement-card" data-reveal data-reveal-delay="240">
+          <div class="stat-number" data-count="600" data-suffix="+">0</div>
+          <div class="stat-label">Learning Hours Logged</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="section testimonials" id="testimonials">
+    <div class="section-container">
+      <div class="section-header" data-reveal>
+        <span class="eyebrow">~/testimonials</span>
+        <h2 class="section-title">What people say</h2>
+      </div>
+
+      <div class="testimonial-carousel" data-reveal>
+        <div class="testimonial-track" id="testimonialTrack">
+          <div class="testimonial-card">
+            <p>"Vinay picked up our MWAA setup fast and turned a flaky pipeline into something
+              we stopped worrying about. He debugs infrastructure the way most juniors debug code — methodically."</p>
+            <div class="testimonial-author"><strong>Engineering Lead</strong><span>Product Team</span></div>
+          </div>
+          <div class="testimonial-card">
+            <p>"Clean API design, sensible error handling, and he actually writes migrations
+              properly. Rare for someone this early in their career."</p>
+            <div class="testimonial-author"><strong> Backend Engineer</strong><span>Colleague</span></div>
+          </div>
+          <div class="testimonial-card">
+            <p>"He doesn't just make the endpoint work — he asks what happens when it fails.
+              That instinct is what makes his services boring in production, in the best way."</p>
+            <div class="testimonial-author"><strong>Engineering Manager</strong><span>Former Manager</span></div>
+          </div>
+        </div>
+        <div class="testimonial-dots" id="testimonialDots"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BLOG SECTION ============ -->
+  <section class="section blog" id="blog">
+    <div class="section-container">
+      <div class="section-header" data-reveal>
+        <span class="eyebrow">~/blog</span>
+        <h2 class="section-title">Latest articles</h2>
+      </div>
+
+      <div class="blog-grid">
+        <article class="blog-card" data-reveal>
+          <span class="blog-tag">FastAPI</span>
+          <h3>Structuring FastAPI Projects for Production</h3>
+          <p>How I split routers, services and schemas so a FastAPI app stays readable past 20 endpoints.</p>
+          <span class="blog-read">Read article &rarr;</span>
+        </article>
+        <article class="blog-card" data-reveal data-reveal-delay="80">
+          <span class="blog-tag">AWS</span>
+          <h3>Debugging MWAA Service Access Errors</h3>
+          <p>A field guide to the execution-role and networking mistakes that break Airflow environments on AWS.</p>
+          <span class="blog-read">Read article &rarr;</span>
+        </article>
+        <article class="blog-card" data-reveal data-reveal-delay="160">
+          <span class="blog-tag">Docker</span>
+          <h3>Shipping Python Services in Minimal Docker Images</h3>
+          <p>Cutting image size and cold-start time for containerized FastAPI services.</p>
+          <span class="blog-read">Read article &rarr;</span>
+        </article>
+        <article class="blog-card" data-reveal data-reveal-delay="240">
+          <span class="blog-tag">Backend</span>
+          <h3>JWT vs Session Auth: What I'd Pick Today</h3>
+          <p>Notes from implementing role-based access control across two different auth strategies.</p>
+          <span class="blog-read">Read article &rarr;</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT SECTION ============ -->
+  <section class="section contact" id="contact">
+    <div class="section-container">
+      <div class="section-header" data-reveal>
+        <span class="eyebrow">~/contact</span>
+        <h2 class="section-title">Let's build something reliable</h2>
+        <p class="section-subtitle">Open to Junior Backend Developer, Python Developer and API Developer roles across Delhi/NCR and remote.</p>
+      </div>
+
+      <div class="contact-grid">
+        <form class="contact-form" id="contactForm" data-reveal novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your full name" required>
+              <span class="form-error" id="nameError"></span>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="you@company.com" required>
+              <span class="form-error" id="emailError"></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="What's this about?" required>
+            <span class="form-error" id="subjectError"></span>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me about the role or project..." required></textarea>
+            <span class="form-error" id="messageError"></span>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            <span>Send Message</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="form-success" id="formSuccess">Message sent — I'll get back to you soon.</div>
+        </form>
+
+        <div class="contact-side" data-reveal data-reveal-delay="120">
+          <div class="contact-info-card">
+            <h4>Direct Contact</h4>
+            <a href="mailto:vinaypate@gmail.com" class="contact-info-row">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M2 5.5A2.5 2.5 0 014.5 3h15A2.5 2.5 0 0122 5.5v13a2.5 2.5 0 01-2.5 2.5h-15A2.5 2.5 0 012 18.5v-13z" stroke="currentColor" stroke-width="1.6"/><path d="M3 6l9 7 9-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              vinaypate94@gmail.com
+            </a>
+            <div class="contact-info-row">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-6.4-7-11.5A7 7 0 0112 2a7 7 0 017 7.5C19 14.6 12 21 12 21z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9.5" r="2.3" stroke="currentColor" stroke-width="1.6"/></svg>
+              Delhi / NCR, India
+            </div>
+          </div>
+
+          <div class="hero-socials contact-socials">
+            <a href="https://www.linkedin.com/in/vinay-patel-54aa48230" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.27c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm13.5 12.27h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-11h2.88v1.5h.04c.4-.76 1.38-1.56 2.84-1.56 3.04 0 3.6 2 3.6 4.59v6.47z"/></svg>
+            </a>
+            <a href="https://github.com/vinaypatel94" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.63 0-12 5.37-12 12 0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58 0-.29-.01-1.04-.02-2.04-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.1-.75.08-.73.08-.73 1.21.09 1.85 1.24 1.85 1.24 1.08 1.84 2.83 1.31 3.52 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23.96-.27 1.98-.4 3-.4s2.04.13 3 .4c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22 0 1.61-.01 2.9-.01 3.3 0 .32.22.7.83.58 4.76-1.59 8.2-6.09 8.2-11.38 0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="section-container footer-container">
+      <div class="footer-brand">
+        <a href="#home" class="nav-logo">
+          <span class="nav-logo-bracket">&lt;</span>Vinay<span class="nav-logo-accent">.dev</span><span class="nav-logo-bracket">/&gt;</span>
+        </a>
+        <p>Python Backend Developer building reliable APIs and AWS-native pipelines.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer-social">
+        <h4>Connect</h4>
+        <div class="hero-socials">
+          <a href="https://www.linkedin.com/in/vinay-patel-54aa48230" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.27c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm13.5 12.27h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-11h2.88v1.5h.04c.4-.76 1.38-1.56 2.84-1.56 3.04 0 3.6 2 3.6 4.59v6.47z"/></svg>
+          </a>
+          <a href="https://github.com/Vinaypatel94" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.63 0-12 5.37-12 12 0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58 0-.29-.01-1.04-.02-2.04-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.1-.75.08-.73.08-.73 1.21.09 1.85 1.24 1.85 1.24 1.08 1.84 2.83 1.31 3.52 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23.96-.27 1.98-.4 3-.4s2.04.13 3 .4c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22 0 1.61-.01 2.9-.01 3.3 0 .32.22.7.83.58 4.76-1.59 8.2-6.09 8.2-11.38 0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="mailto:vinaypate@gmail.com" class="social-icon" aria-label="Email">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M2 5.5A2.5 2.5 0 014.5 3h15A2.5 2.5 0 0122 5.5v13a2.5 2.5 0 01-2.5 2.5h-15A2.5 2.5 0 012 18.5v-13z" stroke="currentColor" stroke-width="1.6"/><path d="M3 6l9 7 9-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> Vinay Patel. Built with HTML, CSS &amp; vanilla JavaScript.</p>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+
+  <script src="script.js"></script>
 </body>
 </html>
-
